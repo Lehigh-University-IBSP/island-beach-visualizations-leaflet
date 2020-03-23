@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IBSP Visualizations | CINQ</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/chart.css">
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/pure-min.css">
+	<link rel="stylesheet" type="text/css" href="css/side-menu.css">
+	<script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="js/papaparse.min.js"></script>
+	<script type="text/javascript" src="js/chart.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+	<body>
+
+		<div id="layout">
+			<!-- Menu toggle -->
+			<a href="#menu" id="menuLink" class="menu-link">
+				<!-- Hamburger icon -->
+				<span></span>
+			</a>
+		
+			<div id="menu">
+				<div class="pure-menu">
+					<a class="pure-menu-heading" href="#">Visualizations</a>
+		
+					<ul class="pure-menu-list">
+						<li class="pure-menu-item menu-item-divided pure-menu-selected">
+							<a href="#" class="pure-menu-link">Home</a>
+						</li>
+						<li class="pure-menu-item"><a href="https://ees.lehigh.edu" class="pure-menu-link">Lehigh EES</a></li>
+						<li class="pure-menu-item"><a href="https://wordpress.lehigh.edu/ibsp" class="pure-menu-link">WordPress Blog</a></li>
+						<li class="pure-menu-item"><a href="https://www.lehigh.edu/~inibsp/data/" class="pure-menu-link">Data</a></li>
+						<li class="pure-menu-item"><a href="https://www.kaggle.com/lehighuniversityibsp/island-beach-state-park-historical-data" class="pure-menu-link">Kaggle</a></li>
+						<li class="pure-menu-item"><a href="mailto:inibsp@lehigh.edu" class="pure-menu-link">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		
+			<div id="main">
+				<div class="header">
+					<h1>IBSP Visualizations</h1>
+					<h2><a href="https://www.lehigh.edu/~inibsp/data/">All data available here</a></h2>
+				</div>
+		
+				<div class="content">
+					<div class="prompt-data-load">
+						<h2 class="content-subhead">The Data | Exploratory Statistics</h2>
+						<hr>
+						<div class="load_control">
+							<h3>Load Preexisting Data from inibsp</h3>
+							<center> <button class="pure-button" onclick="load_data(this)">Load Data</button></center>
+							<center> <button class="pure-button chart_me" onclick="draw_charts(this)">Draw Charts</button></center>
+						</div>
+						<div class="upload_control">
+							<h3>Upload Local Data</h3>
+							<input type="file" id="files">
+							<center> <button class="pure-button" onclick="upload_data(this)">Process Local Data</button></center>
+						</div>
+						<div class="chart_control">
+							<h3>Front of Dune Comparison</h3>
+							<canvas id="dune_stacked_area"></canvas>
+							<h3>Shoreface Comparison</h3>
+							<canvas id="shoreface_stacked_area"></canvas>
+						</div>
+				</div>
+				<div class="map_compare">
+					<h2 class="content-subhead">NAIP Imagery Comparison (2002 vs 2015)</h2>
+					<hr>
+					<iframe src="map_compare.html"></iframe>
+				</div>
+			</div>
+		</div>
+		
+		<script src="js/ui.js"></script>
+		
+		</body>
+</body>
+</html>
